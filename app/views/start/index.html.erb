@@ -1,0 +1,23 @@
+
+<div class="landing-page">
+  <div class="top-page">
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row start-header">
+          <%@albums.each do |album|%>
+          <div class="col-md-6 album-view">
+              <div class="hovereffect">
+                  <%=image_tag(album.photos.first.picture, id: "new-album-img", class:"img-responsive")%>
+                  <div class="overlay">
+                     <h2><%=album.name%></h2>
+                     <%=link_to "More",photos_path%>
+                     <%= link_to "Album", album_path(album) %>
+                  </div>
+              </div>
+          </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

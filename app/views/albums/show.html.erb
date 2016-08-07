@@ -1,0 +1,96 @@
+<script>
+$(document).ready(function(){
+  var fullscreen = 1200;
+  var tablet_screen = 990;
+  var mobile_screen = 770;
+
+  $(window).resize(function() {
+    console.log($(window).width());
+    if($(window).width() > fullscreen){
+      $("<%# @full_screen = true %>");
+
+      console.log("inresize?" + "<%#= @full_screen %>");
+      // location.reload();
+    }
+    if($(window).width() > tablet_screen && $(window).width() < fullscreen){
+      console.log("hejjejej")
+      console.log("hej" + "<%# @full_screen = false %>");
+      // location.reload();
+    }
+
+  });
+});
+
+</script>
+
+<div class="album-show">
+  <div class="container">
+    <div class="row">
+      <div class="first-row-photos">
+        <div class="col-md-12 responsive-column">
+          <%#@full_screen = true%>
+            <%#@photos.first(3).each do |photo|%>
+              <%#=image_tag(photo.picture.height_thumb)%>
+            <%#end%>
+            <%#@photos.first(1).each do|photo|%>
+              <%#=image_tag(photo.picture.width_thumb, class:"width-thumb")%>
+            <%#end%>
+
+            <%if @full_screen == true%>
+            <%number=0%>
+            <%@photos.shuffle.each do |photo|%>
+              <%if number < 3%>
+
+                  <%=image_tag(photo.picture.height_thumb, class:"rss opacity screen-height")%>
+
+              <%elsif number > 2 and number < 4%>
+                <%=image_tag(photo.picture.width_thumb, class:"width-thumb rss opacity screen-height")%>
+              <%elsif number > 3 and number < 5 %>
+                <%=image_tag(photo.picture.height_thumb_more_width, class:"rss opacity screen-height")%>
+              <%elsif number  > 4 and number < 6%>
+                <%=image_tag(photo.picture.width_thumb, class:"width-thumb rss opacity screen-height")%>
+              <%elsif number  > 5 and number < 8%>
+                <%=image_tag(photo.picture.height_thumb_less_width, class:"rss opacity screen-height")%>
+              <%elsif number  > 7 and number < 9%>
+                <%=image_tag(photo.picture.width_thumb, class:"width-thumb  rss opacity screen-height")%>
+              <%elsif number > 8 and number < 12%>
+                <%=image_tag(photo.picture.height_thumb, class:" rss opacity")%>
+              <%elsif number > 11 and number <13%>
+              <%number = 0%>
+              <%end%>
+              <%number += 1%>
+
+            <%end%>
+            <%end%>
+          </div>
+      </div>
+      </div>
+      <!-- <div class="second-row-photos">
+        <div class="col-md-12">
+          <%#@photos.last(1).each do |photo|%>
+            <%#=image_tag(photo.picture.height_thumb_more_width)%>
+          <%#end%>
+          <%#@photos.last(1).each do|photo|%>
+            <%#=image_tag(photo.picture.width_thumb, class:"width-thumb")%>
+          <%#end%>
+          <%#@photos.last(1).each do |photo|%>
+            <%#=image_tag(photo.picture.height_thumb_less_width)%>
+          <%#end%>
+          <%#@photos.last(1).each do |photo|%>
+            <%#=image_tag(photo.picture.height_thumb_less_width)%>
+          <%#end%>
+        </div>
+      </div>
+      <div class="third-row-photos">
+        <div class="col-md-12">
+            <%#@photos.last(1).each do|photo|%>
+              <%#=image_tag(photo.picture.width_thumb, class:"width-thumb")%>
+            <%#end%>
+          <%#@photos.last(3).each do |photo|%>
+            <%#=image_tag(photo.picture.height_thumb)%>
+          <%#end%>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

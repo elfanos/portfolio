@@ -1,0 +1,93 @@
+<script>
+$(document).ready(function() {
+
+
+
+  $("#owl-demo").owlCarousel({
+    pagination: false,
+      navigation : true, // Show next and prev buttons
+      //navigationText: ["<%=image_tag("images/test.jpg")%>"],
+      slideSpeed : 300,
+      singleItem:true,
+      animateIn: 'fadeIn', // add this
+      animateOut: 'fadeOut' // and this
+      // "singleItem:true" is a shortcut for:
+      // items : 1,
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+  });
+  // $('.center').slick({
+  //   centerMode: true,
+  //   centerPadding: '60px',
+  //   slidesToShow: 3,
+  //   responsive: [
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         arrows: false,
+  //         centerMode: true,
+  //         centerPadding: '40px',
+  //         slidesToShow: 3
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         arrows: false,
+  //         centerMode: true,
+  //         centerPadding: '40px',
+  //         slidesToShow: 1
+  //       }
+  //     }
+  //   ]
+  // });
+
+});
+</script>
+<div class="photo-top-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 owl-col">
+        <h1>My photos</h2>
+          <hr></hr>
+        <div class="owl-centered">
+           <div id="owl-demo" class="owl-carousel owl-theme">
+              <%@photo.each do |ph|%>
+                <div class="item">
+                  <%=image_tag(ph.picture)%>
+                </div>
+              <%end%>
+          </div>
+        </div>
+        <hr></hr>
+      </div>
+    </div>
+    <!-- <div class="wrapper-with-margin">
+      <div id="owl-demo" class="owl-carousel">
+       <div>One</div>
+
+       <div>Two</div>
+
+       <div>Three</div>
+
+       <div>Four</div>
+
+      <div>Five</div>
+
+      <div>Six</div>
+
+       <div>Seven</div>
+
+       <div>Eight</div>
+
+       <div>Nine</div>
+
+      <div>Ten</div>
+
+      </div>
+    </div> -->
+  </div>
+</div>

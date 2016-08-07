@@ -1,0 +1,105 @@
+<%#@articles.each do |article|%>
+  <%number = 1%>
+  <%if number < 4 %>
+  <div class="article-top-div">
+    <div class="jumbotron">
+      <div class="container">
+          <%@articles.each do |article|%>
+
+              <%if number < 2%>
+              <div class="col-md-4">
+                <span>
+                  <%=image_tag(article.picture, class:"img-responsive")%>
+                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
+                  <%=link_to "Read more", article.document.url(:original, false)-%>
+                  <hr></hr>
+                </span>
+              </div>
+              <%elsif number > 1 && number < 3%>
+              <div class="col-md-4">
+                <span>
+                  <%=image_tag(article.picture, class:"img-responsive")%>
+                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
+                  <%=link_to "Read more", article.document.url(:original, false)-%>
+                  <hr></hr>
+                </span>
+              </div>
+              <%elsif number > 2 && number < 4%>
+              <div class="col-md-4">
+                <span>
+                  <%=image_tag(article.picture, class:"img-responsive")%>
+                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
+                  <%=link_to "Read more", article.document.url(:original, false)%>
+                  <hr></hr>
+                </span>
+              </div>
+              <%end%>
+              <%number += 1%>
+          <%end%>
+        </div>
+        <div class="container second-container">
+
+          <%@articles.last(3).each do |article|%>
+
+              <%if number < 2+number%>
+              <div class="col-md-4">
+                <span>
+                  <%=image_tag(article.picture, class:"img-responsive")%>
+                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
+                  <%=link_to "Read more", article.document.url(:original, false)-%>
+                  <hr></hr>
+                </span>
+              </div>
+              <%elsif number > 1+number && number < 3+number%>
+              <div class="col-md-4">
+                <span>
+                  <%=image_tag(article.picture, class:"img-responsive")%>
+                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
+                  <%=link_to "Read more", article.document.url(:original, false)-%>
+                  <hr></hr>
+                </span>
+              </div>
+              <%elsif number > 2+number && number < 4+number%>
+              <div class="col-md-4">
+                <span>
+                  <%=image_tag(article.picture, class:"img-responsive")%>
+                  <h3><%=article.name%> About lorem impsum article Lasvegas</h3>
+                  <%=link_to "Read more", article.document.url(:original, false)%>
+                  <hr></hr>
+                </span>
+              </div>
+              <%end%>
+              <%number += 1%>
+          <%end%>
+        </div>
+    </div>
+    <p><%=number%></p>
+  </div>
+  <!-- <div class="first-article-div">
+    <div class="jumbotron"> -->
+
+    <!-- </div>
+  </div> -->
+
+
+<section id="second-article">
+  <div class="second-article-div">
+    <div class="jumbotron">
+      <div class="container">
+        <h1></h1>
+        </hr>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="third-article">
+  <div class="third-article-div">
+    <div class="jumbotron">
+      <div class="container">
+        <h1></h1>
+        </hr>
+      </div>
+    </div>
+  </div>
+</section>
+<%end%>
