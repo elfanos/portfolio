@@ -42,6 +42,7 @@ gem 'aws-sdk', '~> 2.3'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'net-ssh'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -54,6 +55,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'owlcarousel-rails'
+
+gem 'fog'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

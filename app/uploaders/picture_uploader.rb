@@ -57,6 +57,70 @@ class PictureUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fit => [320, 310]
   end
+  
+  version :print do
+
+    version :article_thumb do
+      process :resize_to_fit =>[450,600]
+    end
+
+    version :width_thumb do
+      process :resize_to_fill => [390,300]
+    end
+
+    version :normal_thumb do
+      process :resize_to_fill => [700,700]
+    end
+    version :height_thumb do
+      process :resize_to_fill => [250,300]
+    end
+
+    version :height_thumb_more_width do
+      process :resize_to_fill => [270,300]
+    end
+
+    version :height_thumb_less_width do
+      process :resize_to_fill => [240,300]
+    end
+    # Create different versions of your uploaded files:
+    version :thumb do
+      process :resize_to_fit => [320, 310]
+    end
+
+  end
+
+  version :web do
+
+    version :article_thumb do
+      process :resize_to_fit =>[450,600]
+    end
+
+    version :width_thumb do
+      process :resize_to_fill => [390,300]
+    end
+
+    version :normal_thumb do
+      process :resize_to_fill => [700,700]
+    end
+    version :height_thumb do
+      process :resize_to_fill => [250,300]
+    end
+
+    version :height_thumb_more_width do
+      process :resize_to_fill => [270,300]
+    end
+
+    version :height_thumb_less_width do
+      process :resize_to_fill => [240,300]
+    end
+    # Create different versions of your uploaded files:
+    version :thumb do
+      process :resize_to_fit => [320, 310]
+    end
+
+  end
+
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
