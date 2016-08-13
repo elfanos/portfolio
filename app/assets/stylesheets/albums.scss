@@ -1,3 +1,305 @@
 // Place all the styles related to the albums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900);
+
+#album-views{
+/*colors*/
+$blue: #002B65;
+$red: #D22F00;
+$white: white;
+
+.box {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 8vw;
+  border-top: 10px solid $red;
+  border-bottom: 10px solid $red;
+  line-height: 1;
+  background-color: $white;
+  color: white;
+  background-size: cover;
+  mix-blend-mode: hard-light;
+  height: 400px;
+  height: 50vh;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+
+  p {
+    text-rendering: optimizeLegibility;
+    word-spacing: 5px;
+    margin: 0;
+  }
+}
+  .new-hovereffect{
+    //border: 2px solid #D22F00;
+    margin-bottom: 20px;
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    -moz-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+  }
+  .new-hovereffect img{
+
+    //border: 2px solid #D22F00;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .greyscale{
+    -webkit-filter: grayscale(0.7);
+  	-webkit-filter: grayscale(70%);
+
+  	//filter: gray;
+  	filter: grayscale(70%);
+    // filter: contrast(100%);
+  }
+  .new-hovereffect:hover .greyscale{
+    -webkit-filter: grayscale(0);
+  	-webkit-filter: grayscale(0%);
+    -webkit-filter: contrast(180%);
+    filter: contrast(180%);
+  	filter: 0;
+  	filter: grayscale(0%);
+
+  }
+    .new-hovereffect {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    background: #a3dcc7;
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    border: 3px solid #e8e8e8;
+
+  }
+
+  .new-hovereffect .new-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    padding: 100px 0px;
+  }
+
+  .new-hovereffect img {
+    display: block;
+    position: relative;
+    max-width: none;
+    width: calc(100% + 20px);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-10px,0,0);
+    transform: translate3d(-10px,0,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: white;
+    background-blend-mode: screen;
+  }
+
+  .new-hovereffect:hover img {
+    opacity: 0.50;
+    filter: alpha(opacity=40);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  .new-hovereffect {
+    .new-age{
+      width: 100%;
+      height: 120px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 0.5em 0;
+      background-color: rgba(255,255,255,0.6);
+    }
+  }
+  .new-hovereffect h2 {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    font-size: 43px;
+    overflow: hidden;
+    padding: 0.5em 0;
+    line-height: 0.5;
+    text-rendering: optimizeLegibility;
+    word-spacing: 5px;
+    margin: 0;
+    mix-blend-mode:none;
+
+  //  mix-blend-mode: screen;
+     //mix-blend-mode: color-dodge;
+    // mix-blend-mode: color-burn;
+    // mix-blend-mode: hard-light;
+    // mix-blend-mode: difference;
+     //mix-blend-mode: exclusion;
+    // mix-blend-mode: hue;
+    // mix-blend-mode: saturation;
+    //line-height: 0.5;
+    // .blendning{
+    //   font-family: 'Alegreya Sans SC', sans-serif;
+    //   text-transform: uppercase;
+    //   background-color: none;
+    //   color: orange;
+    //   mix-blend-mode: screen;
+    //   //line-height: 0.5;
+    // }
+  }
+
+  .new-hovereffect h2:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: black;
+    content: '';
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+  }
+
+  .new-hovereffect:hover h2:after {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  .new-hovereffect a, .new-hovereffect p {
+    color: $red;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+  }
+
+  .new-hovereffect:hover a, .new-hovereffect:hover p {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+}
+#show-pictures{
+    background-color: rgba(177,77,77, 0.3);
+  $red: #B14D4D;
+  /*  SECTIONS  */
+  .section {
+  	clear: both;
+  	padding: 0px;
+  	margin: 0px;
+
+  }
+  .center-pictures{
+    margin: 100px;
+    img{
+      width: calc(100% + 20px);
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(-10px,0,0);
+      transform: translate3d(-10px,0,0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      background: white;
+      background-blend-mode: screen;
+      margin-left: 10px;
+      height: 300px;
+    }
+    .greyscale{
+      -webkit-filter: grayscale(1);
+    	-webkit-filter: grayscale(100%);
+
+    	//filter: gray;
+    	filter: grayscale(100%);
+      mix-blend-mode:color-dodge;
+      // filter: contrast(100%);
+    }
+    .col:hover .greyscale{
+      -webkit-filter: grayscale(0);
+    	-webkit-filter: grayscale(0%);
+
+    	//filter: gray;
+    	filter: grayscale(0%);
+      filter: contrast(180%);
+    }
+  }
+  /*  COLUMN SETUP  */
+  .col {
+  	display: block;
+  	float:left;
+  	margin: 1% 0 1% 1.6%;
+    -webkit-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    -moz-box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+    box-shadow: 8px -2px 67px 0px rgba(0,0,0,0.52);
+
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    border: 3px solid #e8e8e8;
+  }
+  .col:first-child { margin-left: 0; }
+
+  /*  GROUPING  */
+  .group:before,
+  .group:after { content:""; display:table; }
+  .group:after { clear:both;}
+  .group { zoom:1; /* For IE 6/7 */ }
+
+  /*  GRID OF SEVEN  */
+  .span_7_of_7 {
+  	width: 100%;
+  }
+
+  .span_6_of_7 {
+    	width: 85.48%;
+  }
+
+  .span_5_of_7 {
+    	width: 70.97%;
+  }
+
+  .span_4_of_7 {
+    	width: 56.45%;
+  }
+
+  .span_3_of_7 {
+    	width: 41.94%;
+  }
+
+  .span_2_of_7 {
+    	width: 27.42%;
+  }
+
+  .span_1_of_7 {
+    	width: 12.91%;
+  }
+  /*double span*/
+  .span_1_2_of_7{
+    width: 40.33%;
+  }
+
+  /*  GO FULL WIDTH BELOW 480 PIXELS */
+  @media only screen and (max-width: 480px) {
+  	.col {  margin: 1% 0 1% 0%; }
+  	.span_1_of_7, .span_2_of_7, .span_3_of_7, .span_4_of_7, .span_5_of_7, .span_6_of_7, .span_7_of_7 {
+      width: 100%;
+    }
+  }
+
+
+}

@@ -57,7 +57,10 @@ class PictureUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fit => [320, 310]
   end
-  
+  version :picture_view do
+    process :resize_to_fit => [900,900]
+  end
+
   version :print do
 
     version :article_thumb do

@@ -1,21 +1,44 @@
-<div class="landing-page">
-  <div class="top-page">
-    <div class="jumbotron">
-      <div class="container">
-        <div class="row start-header">
-          <%@albums.each do |album|%>
-          <div class="col-md-6 album-view">
-              <div class="hovereffect">
-                  <%=image_tag(album.photos.first.picture, id: "new-album-img", class:"img-responsive")%>
-                  <div class="overlay">
-                     <h2><%=album.name%></h2>
-                     <%= link_to "Check out", album_path(album) %>
-                  </div>
-              </div>
+<!-- <div id="album-views">
+      <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <%#@albums.each do |album|%>
+            <div class="col-md-4">
+                <%#=link_to album_path(album) do %>
+                <div class="hovereffect">
+
+                    <%#=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive greyscale")%>
+                    <div class="overlay">
+                       <h2><%#=album.name%></h2>
+
+                    </div>
+                </div>
+                <%#end%>
+            </div>
+            <%#end%>
           </div>
-          <%end%>
         </div>
       </div>
+</div> -->
+<div id="album-views">
+  <div class="container">
+    <div class="row">
+      <%@albums.each do |album|%>
+        <div class="col-md-4">
+          <%=link_to album_path(album) do %>
+            <div class="new-hovereffect">
+              <%=image_tag(album.photos.first.picture.normal_thumb, class:"img-responsive greyscale")%>
+                <div class="new-overlay">
+                  <div class="new-age">
+                    <h2>
+                      <%=album.name%>
+                    </h2>
+                  </div>
+                </div>
+            </div>
+            <%end%>
+        </div>
+      <%end%>
     </div>
   </div>
 </div>
